@@ -28,23 +28,13 @@ def daysinmonth(year, month):
             return 31
 
 def nextDay(year, month, day):
-    if month == 2:
-        if isleapyear(year):
-            if day < 29:
-                return year, month, day + 1
+    if day < daysinmonth(year, month):
+        return year, month, day+1
+    else:
+        if month < 12:
+            return year, month+1,1
         else:
-            if day < 28:
-                return year, month, day + 1
-    if month == 4 or month == 6 or month == 9 or month == 11:
-        if day < 30:
-            return year, month, day + 1
-    if month == 1 or month == 3 or month == 5 or month == 7 or month == 8 or month == 10 or month == 12:
-        if day < 31:
-            return year, month, day + 1
-        else:
-            if month == 12:
-                return year + 1, 1, 1
-    return year, month + 1, 1
+            return year+1,1,1
         
 def dateIsBefore(year1, month1, day1, year2, month2, day2):
     """Returns True if year1-month1-day1 is before year2-month2-day2. Otherwise, returns False."""
