@@ -8,7 +8,7 @@ def print_abacus(value):
         p = '0' + p
     a = 0
     while a < 10:
-        print (('|' + pattern[:(9 - int(p[a]))]) + '   ' + pattern[(10 - int(p[a])):] + '|')
+        print (('|' + pattern[:(10 - int(p[a]))]) + '   ' + pattern[(10 - int(p[a])):] + '|')
         a += 1
 
 ###  TEST CASES
